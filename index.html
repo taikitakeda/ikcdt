@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>【G09】</title>
+  <link rel="stylesheet" href="./css/default.css">
+</head>
+
+<body>
+  <header>
+    <h1>自然言語処理とは？わかりやすく解説！</h1>
+  </header>
+  <main>
+    <div class="layout">
+      <div class="content">
+        <img src="./img/it.jpg" alt="悩む学生">
+        <div class="introduction">
+          <img src="./img/student.png" alt="悩む学生">
+          <p>自然言語処理？聞いたことのない単語が出てきて難しそう...</p>
+        </div>
+        <p>そう思うかもしれませんが、このサイトでは自然言語処理の技術の魅力が伝わるように分かりやすく解説します！</p>
+
+        <nav class="list_design">
+          <span>目次</span>
+          <ol>
+            <li><a href="#first">自然言語処理とは</a></li>
+            <li><a href="#second">取り組み中の課題</a>
+              <ol>
+                <li><a href="#third">研究例1</a></li>
+                <li><a href="#forth">研究例2</a></li>
+              </ol>
+            </li>
+            <li><a href="#fifth">今後の発展の可能性</a></li>
+            <li><a href="#sixth">まとめ</a></li>
+          </ol>
+        </nav>
+
+        <section id="first">
+          <h2>自然言語処理とは</h2>
+          <p>みなさんが普段使っている「言葉」――話したり、書いたり、読んだりする言葉を、<mark>コンピュータが理解したり使ったりできるようにする技術</mark>が「自然言語処理（NLP）」です。これは人工知能（AI）の中でも、とても重要な分野のひとつです。</p>
+      <p>たとえば、こんなことができます：</p>
+      <ul>
+        <li>メールやSNSの文章を自動で分類する</li>
+        <li>長い文章を短くまとめる（要約）</li>
+        <li>外国語を翻訳する</li>
+        <li>プログラミングの手助けをする</li>
+      </ul>
+    
+      <p>最近よく耳にする「ChatGPT」も、自然言語処理の技術を使ったAIのひとつです。たくさんの文章を学習して、人間のように自然な会話や文章作成ができるのが特徴です。中には数千億もの「パラメータ（数式の係数）」が使われていて、それがAIの“頭の良さ”を支えています。</p>
+    
+  </section>
+
+        <section id="second">
+          <h2>取り組み中の課題</h2>
+          <p>以下では自然言語処理を利用した研究例を紹介します。</p>
+
+          <h3 id="third">研究例1</h3>
+          <article>
+        <p><strong><span class="tooltip" data-tooltip="ある言葉と意味や使い方が似ている他の言葉">意味的同位語</span>獲得システム<mark>「rYamaの手」</mark></strong></p>
+        <p>言葉の“意味の近さ”にもとづいて、似たような言葉（同位語）を自動で見つけ出すAIシステム</p>
+
+        <p>この研究では、自然言語の意味的な類似性やカテゴリ的共通性を、AIが理解できる形に変換する技術を探求しています。</p>
+
+      <br><section id="section3">
+      <p><strong><mark>具体例</mark></strong></p>
+  <ol>
+    <li>
+      <strong>入力文「ナルトみたいなバトル漫画」を解析</strong>
+      <ul>
+        <li>「ナルト」＝具体例（どれに似たものを探すか）</li>
+        <li>「バトル漫画」＝カテゴリ（どのグループの中で探すか）</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>カテゴリに属する候補を収集</strong><br>
+      例えば...
+      <ul>
+        <li>BLEACH</li>
+        <li>鬼滅の刃</li>
+        <li>僕のヒーローアカデミア</li>
+        <li>ワンピース</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>語を意味ベクトル化</strong><br>
+      Word2VecやBERTなどの単語埋め込み技術を使用<br>
+      各漫画の名前を意味ベクトルに変換
+      <ul>
+        <li>ナルト→[0.9 , 0.1 , 0.4]</li>
+        <li>BLEACH→[0.88 , 0.15 , 0.42]</li>
+        <li>クレヨンしんちゃん→[0.2 , 0.8 , 0.1]</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>ベクトルの距離を比べる</strong>
+        <p>「ナルト」と他の漫画のcos類似度を計算
+        <br>距離が近いものほど「ナルトみたいな漫画」と判断</p>
+        <ul>
+        <li>ナルトとBLEACH → 近い!（=似てる）</li>
+        <li>ナルトとクレヨンしんちゃん → 遠い! (=似てない)</li>
+        </ul>
+        <p><strong><mark>結果：「ナルトに似てるのはBLEACH」</mark></strong></p>
+    </li>
+  </ol>
+</section>
+
+      <section id="section4">
+        <br><p><strong>使用技術</strong></p>
+        <ul>
+          <li>Word2Vec / BERT：言葉を数字に変えるAI</li>
+          <li>自然言語解析：文構造の理解とカテゴリ抽出</li>
+          <li>類似度計算：ベクトル間の距離を測定して近い語を選定</li>
+        </ul>
+      </section>
+
+    </article>
+
+          <h3 id="forth">研究例2</h3>
+          <h4>質疑応答システム</h4>
+          <p>システムに質問すると、その回答を出してくれる技術です。</p>
+          <p>システムはインターネット上の大量の情報をもとに処理する</p>
+          <p><strong>Q.日本の首都はどこですか？</strong></p>
+
+
+          <div class="box">
+            <span class="title">インターネット上の大量の情報</span>
+            <p>
+              現在、<strong><mark>日本</mark></strong>の<strong><mark>首都</mark></strong>は<strong><mark>東京都</mark></strong>と認識されている。現行の法令には「首都圏」の定義は存在するが（首都圏整備法）「首都」についての定義はなく[1]、また過去においても「首都」という明治以前には一般的でなかった語と伝統的な用語である「都」「京」との関係について明確にされたことがなく、「日本の首都」という語そのものについて議論がある。
+            </p>
+          </div>
+
+          <div class="container">
+            <div class="candidates">
+              <span class="title">抽出した回答候補</span>
+              <p>
+                「東京都」「大阪府」<br>
+                「京都府」「江戸」
+              </p>
+            </div>
+
+            <div class="list">
+              <li>
+                正解の頻度度情報
+              </li>
+              <li>
+                正解候補とキーワードの単語距離
+              </li>
+            </div>
+
+          </div>
+
+          <p><strong>A.東京都です</strong></p>
+
+          <p>使用技術</p>
+          <ul>
+            <li>形態素解析</li>
+            質問を単語ごとに分解し、品詞（名詞・動詞など）を判別
+            <li>深層学習</li>
+            質問と文脈を同時に理解し、最も適切な答えを抽出・生成
+            <li>構文解析</li>
+            文の構造（主語・述語・目的語など）を解析
+          </ul>
+
+          <p>応用例</p>
+          <ul>
+            <li>喩え表現</li>
+            面積を東京ドーム何個分であらわすなど
+            <li>マルチモーダルインタラクション</li>
+            候補を画像で表示
+            <li>完成に基づくインタラクション</li>
+            人の話し相⼿ではなく第三者として人間同士の会話をサポート
+          </ul>
+
+        </section>
+
+        <section id="fifth">
+          <h2>今後の発展の可能性</h2>
+      <p>自然言語処理（NLP）は、より高度な言語理解と生成を目指して、現在も進化を続けています。今後の技術の発展には、次のような方向性があります：</p>
+      <ul>
+        <li><strong>マルチモーダル処理：</strong> テキストだけでなく、画像や音声など複数の情報を統合して処理する技術の進展</li>
+        <li><strong>少量データでの学習：</strong> 少量のデータでも高精度な処理が可能な技術の開発</li>
+        <li><strong>言語横断的な処理：</strong> 複数の言語を横断して処理できる汎用的なモデルの構築</li>
+        <li><strong>コモンセンス推論：</strong> 人間のような常識的な推論が可能なAIの開発</li>
+        <li><strong>説明可能なAI：</strong> 処理の過程や理由を人間が理解できる形で説明できるAIの実現</li>
+      </ul>
+      <p>
+        これらの技術が発展することで、自然言語処理はより人間に近い言語能力を持ち、幅広い分野での応用が期待されています。
+      </p>
+        </section>
+
+        <section id="sixth">
+          <h2>まとめ</h2>
+        <p>自然言語処理（NLP）は、私たちが日常的に使う「言葉」をコンピュータが理解・活用できるようにする技術であり、AIの中でも重要な分野です。</p>
+        <p>このサイトでは、自然言語処理の基本的な考え方から、現在取り組まれている研究課題、そして今後の発展の可能性までを紹介しました。</p>
+        <ul>
+          <li>自然言語処理は、翻訳・要約・分類など多様な応用が可能</li>
+          <li>研究では、意味的な類似性や文脈理解などが重要なテーマ</li>
+          <li>今後は、マルチモーダル処理や少量データでの学習などが注目されている</li>
+        </ul>
+        <p>これらの技術が進化することで、AIはより人間らしい言語理解を実現し、教育・医療・ビジネスなどさまざまな分野で活躍することが期待されています。</p>
+        <p>自然言語処理は、未来の社会を支える重要な技術のひとつです。ぜひ、興味を持って学びを深めてみてください。</p><br>
+        </section>
+
+        <a href="#first" class="back-to-toc">▲ 目次に戻る</a>
+      </div>
+
+      <nav class="sidebar">
+        <h2>目次</h2>
+        <ol>
+          <li><a href="#first">自然言語処理とは</a></li>
+           <li><a href="#second">取り組み中の課題</a>
+            <ol>
+              <li><a href="#third">研究例1</a></li>
+              <li><a href="#forth">研究例2</a></li>
+            </ol>
+          </li>
+          <li><a href="#fifth">今後の発展の可能性</a></li>
+          <li><a href="#sixth">まとめ</a></li>
+        </ol>
+      </nav>
+    </div>
+  </main>
+  
+  <footer>
+    <p>&copy; 社会システムデザイン創成グループ9</p>
+  </footer>
+</body>
+</html>
